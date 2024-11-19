@@ -24,13 +24,10 @@ const HomePage = () => {
       <div className="w-full h-screen overflow-auto px-2">
         <Header />
         {activeSection === "#profile" && <Profile />}
-      { activeSection !== "#profile" && <>
+        { activeSection !== "#profile" && <>
           <Histories />
           <Dashboard />
         </>}
-        {/*  {activeSection === "#dashbord" && (
-         
-        )} */}
       </div>
     </div>
   );

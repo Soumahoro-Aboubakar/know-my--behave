@@ -20,35 +20,43 @@ const Signup = () => {
       toast.error("All fields are required!");
       return;
     }
-
+  
+    // Check if the email is valid
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address!");
+      return;
+    }
+  
     // Check if passwords match
     if (password !== confirmPassword) {
       toast.error("Passwords do not match!");
       return;
     }
-
+  
     // Check if terms and conditions are accepted
     if (!acceptedTerms) {
       toast.error("You must accept the Terms of Service to sign up!");
       return;
     }
-
+  
     const newUser = { email, password };
-
+  
     // Check if user already exists
     const userExists = users.some((user) => user.email === email);
     if (userExists) {
       toast.error("User already exists!");
       return;
     }
-
+  
     // Add user to localStorage
     setUsers([...users, newUser]);
     toast.success("Account created successfully!");
-
+  
     // Redirect to home after a delay (2s)
     setTimeout(() => navigate("/home"), 2000);
   };
+  
 
   return (
     <div className="h-screen flex p-4 justify-center items-center bg-[url('https://wpassets.porttechnology.org/wp-content/uploads/2021/03/19143827/iStock-623431736.jpg')] bg-cover bg-center">

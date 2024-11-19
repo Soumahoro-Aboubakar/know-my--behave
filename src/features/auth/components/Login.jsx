@@ -7,8 +7,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-// Note: Before yous start, you have to know this app does not handle authentication via Facebook, Instagram, or Twitter.
-const [users] = useLocalStorage("users", []); //this contain all users in local
+  // Note: Before yous start, you have to know this app does not handle authentication via Facebook, Instagram, or Twitter.
+  const [users] = useLocalStorage("users", []); //this contain all users in local
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -17,6 +17,12 @@ const [users] = useLocalStorage("users", []); //this contain all users in local
     // Check if email and password are filled
     if (!email || !password) {
       toast.error("Please fill in all fields!");
+      return;
+    }
+    // Check if the email is valid
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address!");
       return;
     }
 
@@ -37,7 +43,7 @@ const [users] = useLocalStorage("users", []); //this contain all users in local
   return (
     <div className="h-screen flex justify-center items-center bg-[url('https://wpassets.porttechnology.org/wp-content/uploads/2021/03/19143827/iStock-623431736.jpg')] bg-cover bg-center">
       <ToastContainer position="top-right" />
-      <div className="w-full max-w-md p-10 bg-white shadow-2xl rounded-lg border border-gray-200 shadow-slate-100">
+      <div className="w-full max-w-md p-10 bg-white shadow-2xl mx-4 rounded-lg border border-gray-200 shadow-slate-100">
         <h1 className="text-4xl font-semibold text-center text-gray-800 mb-4 tracking-tight">
           Welcome Back
         </h1>
@@ -71,7 +77,9 @@ const [users] = useLocalStorage("users", []); //this contain all users in local
 
           {/* Forgot Password Link */}
           <div className="text-right">
-            <button  onClick={()=> toast.success("Oups this part is not handle yet")}>
+            <button
+              onClick={() => toast.success("Oups this part is not handle yet")}
+            >
               <a className="text-sm text-blue-600 hover:underline cursor-pointer">
                 Forgot Password?
               </a>

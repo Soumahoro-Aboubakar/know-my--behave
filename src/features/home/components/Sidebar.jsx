@@ -5,13 +5,14 @@ import "../style/home.css";
 import { FaCogs, FaUsers } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const Sidebar = ({ fromHeader = false , setOpenMenu = ()=> console.log("")
  }) => {
   const [active, setActive] = useState("Dashbord");
-   useEffect(()=>{
+  const navigate = useNavigate();
+  useEffect(()=>{
      setActive(active)  //this line avoid navigation dashbord problem
    },[active])
   const menuItems = [
@@ -36,16 +37,18 @@ const Sidebar = ({ fromHeader = false , setOpenMenu = ()=> console.log("")
             <button
               key={item.name}
               onClick={(e) => {
-                e.stopPropagation(); // Prevent bubbling //this line avoid navigation dashbord problem
+                e.stopPropagation(); // Prevent bubbling //this line avoid navigation dashbord 
+                if(item.href === "#logout") return  navigate("/login")
                 setActive(item.name)
                 setOpenMenu(false)
+
               }}
               className={`flex items-center w-full px-4 py-2 rounded-lg mb-3 text-left text-lg font-medium ${
                 active === item.name
                   ? "bg-blue-500 text-white shadow-lg"
                   : "text-gray-700 hover:bg-blue-100 hover:text-blue-600"
               }`}
-            >
+            >    
               <span className="mr-3 text-xl">{item.icon}</span>
               <a href={item.href}>{item.name}</a>
             </button>
