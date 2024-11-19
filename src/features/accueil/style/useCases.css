@@ -1,0 +1,30 @@
+/*every here concern accueil component
+*/
+
+.use-case-container {
+    background: linear-gradient(to bottom, rgb(246, 243, 243), white);
+}
+
+.custom-shadow {
+    box-shadow: 0 0px 6px rgba(71, 63, 179, 0.973); 
+}
+@media (max-width: 869px) {
+    .custom-shadow {
+        transform: translateY(2px);
+      }
+    
+  }
+@media (max-width: 774px) {
+    .custom-shadow {
+        display: none;
+      }
+
+      .app-name-container {
+        margin-top: 40px;
+        font-size: 30px;
+      }
+      .app-name-container .app-name {
+        font-size: 35px;
+      }
+    
+  }

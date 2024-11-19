@@ -1,0 +1,13 @@
+
+
+
+
+@media (max-width : 515px ){
+    .setting-options {
+      display: flex;
+      flex-direction: column;
+    }
+    .setting-options .option- {
+        margin-top: 21px;
+      }
+}  

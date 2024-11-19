@@ -1,0 +1,41 @@
+/*every here concern accueil component
+
+ this animation section is refer my  chat icon
+*/
+.icon-container {
+  animation: fadeIn 1s infinite alternate; /* chat btn animation*/
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 939px) {
+    .first-message {
+      font-size: 60px;
+    }
+    .seconde-message {
+      font-size: 42px;
+    }
+   
+  }
+
+@media (max-width: 774px) {
+  .first-message {
+    font-size: 60px;
+  }
+  .seconde-message {
+    font-size: 42px;
+  }
+  header {
+    margin-top: 100px;
+  }
+ 
+}

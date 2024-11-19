@@ -1,0 +1,15 @@
+
+@media (max-width: 710px) {
+  .dashbord-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .user-data{
+    max-width: 710px;
+    width: 100%;
+  }
+  .recent-compagies {
+    max-width: 400px;
+    width: 100%;
+  }
+}

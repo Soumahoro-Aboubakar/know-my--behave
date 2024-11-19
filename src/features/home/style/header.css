@@ -1,0 +1,5 @@
+
+
+.header-container{
+    height: var(--headerSize); /* this variable is declared inside home.css */
+}
