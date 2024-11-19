@@ -10,7 +10,7 @@ const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <div className="header-container  w-full px-8  z-50 top-0">
-      <header className="flex justify-between  px-4 pb-3 bg-gray-800 text-white">
+      <header className="flex justify-between  px-4 py-2 bg-gray-800 text-white">
         {/* App name*/}
         <div className="flex items-center space-x-2">
           <FaUserCircle size={30} />
