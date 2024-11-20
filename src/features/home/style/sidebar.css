@@ -7,7 +7,7 @@
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-@media (max-width: 775px) { /* margin is   added to the sidebar for the small screen (mobile)  */
+@media (max-width: 775px) { /* margin is added to the sidebar for the small screen (mobile)  */
   .sidebar {
     margin-top: 100px;
   }
